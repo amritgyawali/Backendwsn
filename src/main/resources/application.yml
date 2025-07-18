@@ -1,14 +1,18 @@
 spring:
+  security:
+    filter:
+      disable-before-chain: false
   datasource:
     url: jdbc:postgresql://localhost:5432/wsn
     username: postgres
-    password: password
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: validate
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgresSQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
         format_sql: true
     flyway:
       enabled: true
@@ -16,3 +20,10 @@ spring:
 
 server:
   port: 8081
+
+app:
+  jwt:
+    secret: "weddingbazaar-secret-key-with-min-32-characters-1234567890"
+    expiration-ms: 86400000 # 24 hours
+
+
