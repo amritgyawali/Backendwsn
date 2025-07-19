@@ -2,6 +2,7 @@ package com.wsn.controller;
 
 import com.wsn.config.JwtUtils;
 import com.wsn.model.dto.LoginRequest;
+import com.wsn.model.dto.LoginResponse;
 import com.wsn.model.dto.RegisterRequest;
 import com.wsn.model.entity.User;
 import com.wsn.service.AuthService;
@@ -32,6 +33,7 @@ public class AuthController {
         return ResponseEntity.ok(new LoginResponse(jwt));
     }
 
+    @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody com.wsn.model.dto.RegisterRequest request){
         User user = authService.registerUser(
                 request.getEmail(),
@@ -40,9 +42,5 @@ public class AuthController {
         );
         return ResponseEntity.ok("User registered successfully");
     }
-
-    public  record LoginRequest(String email, String password){}
-    public  record LoginResponse(String token){}
-    public  record RegisterRequest(String email, String password, String role){}
 
 }

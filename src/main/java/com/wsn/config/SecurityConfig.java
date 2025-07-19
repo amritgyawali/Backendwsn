@@ -3,7 +3,6 @@ package com.wsn.config;
 import com.wsn.model.entity.User;
 import com.wsn.repository.UserRepository;
 import com.wsn.security.UserDetailsImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,50 +22,51 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+    private final JwtAuthFilter jwtAuthFilter;
+    private final UserRepository userRepository;
 
-    @Autowired
-    private JwtAuthFilter jwtAuthFilter;
+    public SecurityConfig(JwtAuthFilter jwtAuthFilter,
+                          UserRepository userRepository) {
+        this.jwtAuthFilter = jwtAuthFilter;
+        this.userRepository = userRepository;
+    }
 
-    @Autowired
-    private UserRepository userRepository;
-
-    // ✅ Define UserDetailsService inline using a lambda
     @Bean
     public UserDetailsService userDetailsService() {
         return email -> {
             User user = userRepository.findByEmail(email)
-                    .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+                    .orElseThrow(() ->
+                            new UsernameNotFoundException("User not found with email: " + email));
             return new UserDetailsImpl(user);
         };
     }
 
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
+                .sessionManagement(s ->
+                        s.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .authorizeHttpRequests(a ->
+                        a.requestMatchers("/api/auth/**").permitAll()
                                 .anyRequest().authenticated()
-                        );
-
-        http.addFilterBefore(
-                jwtAuthFilter,
-                UsernamePasswordAuthenticationFilter.class
-        );
+                )
+                .addFilterBefore(
+                        jwtAuthFilter,
+                        UsernamePasswordAuthenticationFilter.class
+                );
         return http.build();
     }
 
     @Bean
     public AuthenticationManager authenticationManager(
-            AuthenticationConfiguration authConfig) throws Exception{
+            AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
