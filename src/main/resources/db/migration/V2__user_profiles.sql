@@ -10,7 +10,7 @@ CREATE TABLE user_profiles (
 CREATE TABLE customers (
     id UUID PRIMARY KEY REFERENCES users(id),
     wedding_date DATE NOT NULL,
-    budget DECIMAL(12,2) NOT NULL,
+    budget DECIMAL(12, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

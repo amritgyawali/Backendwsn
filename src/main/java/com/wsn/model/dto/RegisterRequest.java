@@ -3,12 +3,14 @@ package com.wsn.model.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Data
 @NoArgsConstructor
 public class RegisterRequest {
     String email;
     String password;
+    @NotNull
     String role;
 
     public String getEmail() {

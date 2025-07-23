@@ -1,10 +1,13 @@
 package com.wsn.model.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UuidGenerator;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -16,20 +19,39 @@ public class User {
     @UuidGenerator
     private UUID id;
 
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @NonNull
     private String password;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
-    public enum Role{
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private UserProfile profile;
+
+    public enum Role {
         CUSTOMER, VENDOR, ADMIN
     }
 
+    public User() {
+        // No-arg constructor required for JPA
+    }
+
+    public User(UUID id, String email, String password, Role role) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+    // Getters and setters
     public UUID getId() {
         return id;
     }
@@ -62,14 +84,22 @@ public class User {
         this.role = role;
     }
 
-    public User(UUID id, String email, String password, Role role) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.role = role;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public User() {
-        // No-arg constructor required for JPA or manual object creation
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public UserProfile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(UserProfile profile) {
+        this.profile = profile;
+        if (profile != null) {
+            profile.setUser(this);
+        }
     }
 }

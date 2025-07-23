@@ -1,22 +1,16 @@
 package com.wsn.model.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Getter
-@Setter
-@Table(name = "customers")
-public class Customer {
-
+@Data
+@Table(name = "admins")
+public class Admin {
     @Id
     private UUID id;
 
@@ -25,25 +19,18 @@ public class Customer {
     @JoinColumn(name = "id")
     private User user;
 
-
-    private LocalDateTime weddingDate;
-
-    @Column(nullable = false)
-    private double budget;
-
+    private String department;
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @Version
     private Long version;
 
-    public Customer(){};
-
-    public Customer(UUID id, User user, LocalDateTime weddingDate, double budget, LocalDateTime createdAt) {
+    public Admin(){};
+    public Admin(UUID id, User user, String department, LocalDateTime createdAt) {
         this.id = id;
         this.user = user;
-        this.weddingDate = weddingDate;
-        this.budget = budget;
+        this.department = department;
         this.createdAt = createdAt;
     }
 
@@ -63,20 +50,12 @@ public class Customer {
         this.user = user;
     }
 
-    public LocalDateTime getWeddingDate() {
-        return LocalDateTime.from(weddingDate);
+    public String getDepartment() {
+        return department;
     }
 
-    public void setWeddingDate(LocalDateTime weddingDate) {
-        this.weddingDate = weddingDate;
-    }
-
-    public double getBudget() {
-        return budget;
-    }
-
-    public void setBudget(double budget) {
-        this.budget = budget;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public LocalDateTime getCreatedAt() {

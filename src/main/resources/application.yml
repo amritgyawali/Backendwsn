@@ -1,4 +1,12 @@
 spring:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    clean-disabled: false
+    out-of-order: true
+
   security:
     filter:
       disable-before-chain: false
@@ -7,23 +15,53 @@ spring:
     username: postgres
     password: postgres
   jpa:
+    scheduler:
+      enabled: true
     hibernate:
       ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
+        jdbc:
+          lob:
+            non_contextual_creation: true
         format_sql: true
-    flyway:
-      enabled: true
-      locations: classpath:db/migration
-
 server:
-  port: 8082
+  port: 8085
 
+logging:
+  level:
+    root: WARN  # Only show warnings and errors by default
+    com.wsn: INFO  # Your application logs at INFO level
+    org.springframework.web: WARN  # Only show Spring Web warnings/errors
+    org.hibernate.SQL: WARN  # Only show SQL warnings/errors
+  pattern:
+    console: "%d{HH:mm:ss} %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/application.log
+    level: INFO  # File will still contain all INFO and above logs
+    max-history: 7
+    max-size: 10MB
+
+#  for all type of logs
+#logging:
+#  level:
+#    root: INFO
+#    org.springframework.web: INFO
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+#    org.springframework.orm.jpa: DEBUG
+#    org.springframework.transaction: DEBUG
+#    org.hibernate.engine.transaction: DEBUG
+#    com.wsn: DEBUG  # Your application's base package
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#  file:
+#    name: logs/application.log
+#    max-history: 7
+#    max-size: 10MB
 app:
   jwt:
     secret: "weddingbazaar-secret-key-with-min-32-characters-1234567890"
     expiration-ms: 86400000 # 24 hours
-
-
