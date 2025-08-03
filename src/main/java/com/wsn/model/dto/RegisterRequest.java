@@ -10,7 +10,6 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class RegisterRequest {
     String email;
     String password;
-    @NotNull
     String role;
 
     public String getEmail() {

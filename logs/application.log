@@ -1,285 +1,70 @@
-2025-07-23T18:46:13.263+05:45  INFO 4248 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 4248 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
-2025-07-23T18:46:13.271+05:45 DEBUG 4248 --- [restartedMain] com.wsn.WsnApplication                   : Running with Spring Boot v3.5.3, Spring v6.2.8
-2025-07-23T18:46:13.282+05:45  INFO 4248 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
-2025-07-23T18:46:13.475+05:45  INFO 4248 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-07-23T18:46:13.477+05:45  INFO 4248 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-07-23T18:46:15.556+05:45  INFO 4248 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-07-23T18:46:15.732+05:45  INFO 4248 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 8 JPA repository interfaces.
-2025-07-23T18:46:17.400+05:45  INFO 4248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
-2025-07-23T18:46:17.440+05:45  INFO 4248 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-07-23T18:46:17.440+05:45  INFO 4248 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-23T18:46:17.576+05:45  INFO 4248 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-07-23T18:46:17.576+05:45  INFO 4248 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4099 ms
-2025-07-23T18:46:17.739+05:45 DEBUG 4248 --- [restartedMain] com.wsn.config.JwtAuthFilter             : Filter 'jwtAuthFilter' configured for use
-2025-07-23T18:46:18.347+05:45  INFO 4248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-07-23T18:46:18.870+05:45  INFO 4248 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f96e0e8
-2025-07-23T18:46:18.872+05:45  INFO 4248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-07-23T18:46:18.922+05:45  INFO 4248 --- [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/wsn (PostgreSQL 17.5)
-2025-07-23T18:46:19.010+05:45  INFO 4248 --- [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Repair of failed migration in Schema History table "public"."flyway_schema_history" not necessary. No failed migration detected.
-2025-07-23T18:46:19.048+05:45  INFO 4248 --- [restartedMain] o.f.core.internal.command.DbRepair       : Successfully repaired schema history table "public"."flyway_schema_history" (execution time 00:00.082s).
-2025-07-23T18:46:19.144+05:45  INFO 4248 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 17 migrations (execution time 00:00.022s)
-2025-07-23T18:46:19.178+05:45  INFO 4248 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 17 migrations (execution time 00:00.016s)
-2025-07-23T18:46:19.198+05:45  INFO 4248 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 17
-2025-07-23T18:46:19.199+05:45  WARN 4248 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
-2025-07-23T18:46:19.203+05:45  INFO 4248 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2025-07-23T18:46:19.602+05:45 DEBUG 4248 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2025-07-23T18:46:19.739+05:45  INFO 4248 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-07-23T18:46:19.933+05:45  INFO 4248 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
-2025-07-23T18:46:20.007+05:45  INFO 4248 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-07-23T18:46:20.575+05:45  INFO 4248 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-07-23T18:46:20.815+05:45  WARN 4248 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-07-23T18:46:20.846+05:45  INFO 4248 --- [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.5
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-07-23T18:46:23.086+05:45  INFO 4248 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-07-23T18:46:23.329+05:45  INFO 4248 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-07-23T18:46:24.220+05:45  INFO 4248 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-07-23T18:46:25.868+05:45  INFO 4248 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2025-07-23T18:46:25.953+05:45 DEBUG 4248 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-07-23T18:46:26.143+05:45 DEBUG 4248 --- [restartedMain] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-2025-07-23T18:46:26.234+05:45 DEBUG 4248 --- [restartedMain] org.hibernate.SQL                        : 
-    select
-        up1_0.id,
-        up1_0.avatar_url,
-        up1_0.created_at,
-        up1_0.full_name,
-        up1_0.phone,
-        up1_0.updated_at,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        up1_0.version 
-    from
-        user_profiles up1_0 
-    join
-        users u1_0 
-            on u1_0.id=up1_0.id 
-    where
-        up1_0.id=?
-2025-07-23T18:46:26.278+05:45 DEBUG 4248 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-07-23T18:46:26.280+05:45 DEBUG 4248 --- [restartedMain] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-2025-07-23T18:46:26.282+05:45 DEBUG 4248 --- [restartedMain] org.hibernate.SQL                        : 
-    select
-        up1_0.id,
-        up1_0.avatar_url,
-        up1_0.created_at,
-        up1_0.full_name,
-        up1_0.phone,
-        up1_0.updated_at,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        up1_0.version 
-    from
-        user_profiles up1_0 
-    join
-        users u1_0 
-            on u1_0.id=up1_0.id 
-    where
-        up1_0.id=?
-2025-07-23T18:46:26.285+05:45 DEBUG 4248 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-07-23T18:46:26.288+05:45 DEBUG 4248 --- [restartedMain] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-2025-07-23T18:46:26.290+05:45 DEBUG 4248 --- [restartedMain] org.hibernate.SQL                        : 
-    select
-        up1_0.id,
-        up1_0.avatar_url,
-        up1_0.created_at,
-        up1_0.full_name,
-        up1_0.phone,
-        up1_0.updated_at,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        up1_0.version 
-    from
-        user_profiles up1_0 
-    join
-        users u1_0 
-            on u1_0.id=up1_0.id 
-    where
-        up1_0.id=?
-2025-07-23T18:46:26.422+05:45  WARN 4248 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-07-23T18:46:27.938+05:45  INFO 4248 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-07-23T18:46:27.988+05:45  INFO 4248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
-2025-07-23T18:46:28.006+05:45  INFO 4248 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 15.778 seconds (process running for 16.586)
-2025-07-23T18:46:47.862+05:45  INFO 4248 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-23T18:46:47.863+05:45  INFO 4248 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-07-23T18:46:47.867+05:45  INFO 4248 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-07-23T18:46:48.080+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-07-23T18:46:48.085+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-2025-07-23T18:46:48.089+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] org.hibernate.SQL                        : 
-    select
-        up1_0.id,
-        up1_0.avatar_url,
-        up1_0.created_at,
-        up1_0.full_name,
-        up1_0.phone,
-        up1_0.updated_at,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        up1_0.version 
-    from
-        user_profiles up1_0 
-    join
-        users u1_0 
-            on u1_0.id=up1_0.id 
-    where
-        up1_0.id=?
-2025-07-23T18:46:48.115+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-07-23T18:46:48.152+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1061987260<open>)] for JPA transaction
-2025-07-23T18:46:48.152+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
-2025-07-23T18:46:48.168+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.h.e.t.internal.TransactionImpl         : On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-2025-07-23T18:46:48.168+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.h.e.t.internal.TransactionImpl         : begin
-2025-07-23T18:46:48.175+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4dfea9df]
-2025-07-23T18:46:48.188+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] org.hibernate.SQL                        : 
-    select
-        c1_0.id,
-        c1_0.budget,
-        c1_0.created_at,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        c1_0.version,
-        c1_0.wedding_date 
-    from
-        customers c1_0 
-    join
-        users u1_0 
-            on u1_0.id=c1_0.id 
-    where
-        c1_0.id=?
-2025-07-23T18:46:48.203+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] org.hibernate.SQL                        : 
-    select
-        up1_0.id,
-        up1_0.avatar_url,
-        up1_0.created_at,
-        up1_0.full_name,
-        up1_0.phone,
-        up1_0.updated_at,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.password,
-        u1_0.role,
-        up1_0.version 
-    from
-        user_profiles up1_0 
-    join
-        users u1_0 
-            on u1_0.id=up1_0.id 
-    where
-        up1_0.id=?
-2025-07-23T18:46:48.208+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
-2025-07-23T18:46:48.209+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(1061987260<open>)]
-2025-07-23T18:46:48.213+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.h.e.t.internal.TransactionImpl         : committing
-2025-07-23T18:46:48.217+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
-2025-07-23T18:46:48.233+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] org.hibernate.SQL                        : 
-    select
-        b1_0.id,
-        b1_0.amount,
-        b1_0.created_at,
-        b1_0.customer_id,
-        b1_0.event_date,
-        b1_0.service_type,
-        b1_0.status,
-        b1_0.updated_at,
-        b1_0.vendor_id 
-    from
-        bookings b1_0 
-    left join
-        customers c1_0 
-            on c1_0.id=b1_0.customer_id 
-    where
-        c1_0.id=?
-2025-07-23T18:46:48.261+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] org.hibernate.SQL                        : 
-    select
-        count(b1_0.id) 
-    from
-        bookings b1_0 
-    left join
-        customers c1_0 
-            on c1_0.id=b1_0.customer_id 
-    where
-        c1_0.id=?
-2025-07-23T18:46:48.344+05:45 DEBUG 4248 --- [http-nio-8085-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-07-23T18:48:08.235+05:45  INFO 4248 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-23T18:48:09.362+05:45  INFO 4248 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-07-23T18:48:10.227+05:45  INFO 4248 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-07-23T18:48:11.491+05:45  INFO 4248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-07-23T18:48:11.760+05:45  INFO 4248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-07-23T18:48:33.098+05:45  INFO 12588 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 12588 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
-2025-07-23T18:48:33.111+05:45  INFO 12588 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
-2025-07-23T18:48:40.788+05:45  WARN 12588 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
-2025-07-23T18:48:45.120+05:45  WARN 12588 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-07-23T18:48:56.790+05:45  WARN 12588 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-07-23T18:49:00.914+05:45  INFO 12588 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 29.294 seconds (process running for 30.267)
-2025-07-23T18:52:49.353+05:45  INFO 4012 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 4012 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
-2025-07-23T18:52:49.379+05:45  INFO 4012 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
-2025-07-23T18:52:58.532+05:45  WARN 4012 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
-2025-07-23T18:53:00.676+05:45  WARN 4012 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-07-23T18:53:09.406+05:45  WARN 4012 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-07-23T18:53:12.429+05:45  INFO 4012 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 25.586 seconds (process running for 26.925)
-2025-07-23T18:55:43.501+05:45  WARN 4012 --- [http-nio-8085-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in string value]
-2025-07-23T19:00:28.896+05:45  INFO 9480 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 9480 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
-2025-07-23T19:00:28.901+05:45  INFO 9480 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
-2025-07-23T19:00:43.420+05:45  WARN 9480 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
-2025-07-23T19:00:55.893+05:45  WARN 9480 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-07-23T19:01:06.428+05:45  WARN 9480 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-07-23T19:01:08.999+05:45  INFO 9480 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 41.512 seconds (process running for 43.471)
-2025-07-23T19:01:34.794+05:45  WARN 9480 --- [http-nio-8085-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: No enum constant com.wsn.model.entity.User.Role.]
+2025-08-03T01:03:51.230+05:45  INFO 15400 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 15400 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T01:03:51.244+05:45  INFO 15400 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T01:03:56.549+05:45  WARN 15400 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T01:03:57.616+05:45  WARN 15400 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T01:04:03.279+05:45  WARN 15400 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T01:04:04.822+05:45  INFO 15400 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 14.843 seconds (process running for 16.379)
+2025-08-03T01:04:54.481+05:45  WARN 15400 --- [http-nio-8085-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:09:25.448+05:45  WARN 15400 --- [http-nio-8085-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:41:48.704+05:45  WARN 15400 --- [http-nio-8085-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:43:52.417+05:45  WARN 15400 --- [http-nio-8085-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value: com.wsn.model.entity.Booking.customer]
+2025-08-03T01:44:57.711+05:45  WARN 15400 --- [http-nio-8085-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:45:09.720+05:45  WARN 15400 --- [http-nio-8085-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:45:32.924+05:45  WARN 15400 --- [http-nio-8085-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:49:24.975+05:45  WARN 15400 --- [http-nio-8085-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking]
+2025-08-03T01:54:20.595+05:45  INFO 2556 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 2556 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T01:54:20.621+05:45  INFO 2556 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T01:54:27.550+05:45  WARN 2556 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T01:54:28.768+05:45  WARN 2556 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T01:54:33.585+05:45  WARN 2556 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T01:54:35.078+05:45  INFO 2556 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 15.652 seconds (process running for 16.998)
+2025-08-03T01:54:38.201+05:45  WARN 2556 --- [http-nio-8085-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Inquiry must be responded before booking. Current status: CONVERTED]
+2025-08-03T02:00:21.997+05:45  INFO 15700 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 15700 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T02:00:22.002+05:45  INFO 15700 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T02:00:26.481+05:45  WARN 15700 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T02:00:27.555+05:45  WARN 15700 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T02:00:32.109+05:45  WARN 15700 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T02:00:32.983+05:45  INFO 15700 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 12.031 seconds (process running for 12.932)
+2025-08-03T02:01:17.100+05:45  WARN 15700 --- [http-nio-8085-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value: com.wsn.model.entity.Booking.customer]
+2025-08-03T02:01:32.657+05:45  WARN 15700 --- [http-nio-8085-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value: com.wsn.model.entity.Booking.customer]
+2025-08-03T02:04:39.762+05:45  INFO 14004 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 14004 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T02:04:39.769+05:45  INFO 14004 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T02:04:45.818+05:45  WARN 14004 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T02:04:47.058+05:45  WARN 14004 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T02:04:51.431+05:45  WARN 14004 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T02:04:52.738+05:45  INFO 14004 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 14.313 seconds (process running for 15.247)
+2025-08-03T02:09:24.856+05:45  WARN 14004 --- [http-nio-8085-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-08-03T02:09:31.166+05:45  WARN 14004 --- [http-nio-8085-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 22003
+2025-08-03T02:09:31.167+05:45 ERROR 14004 --- [http-nio-8085-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: numeric field overflow
+  Detail: A field with precision 5, scale 2 must round to an absolute value less than 10^3.
+2025-08-03T02:09:31.217+05:45  WARN 14004 --- [http-nio-8085-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: numeric field overflow<EOL>  Detail: A field with precision 5, scale 2 must round to an absolute value less than 10^3.] [insert into payments (amount,booking_id,commission,created_at,payment_date,status,id) values (?,?,?,?,?,?,?)]; SQL [insert into payments (amount,booking_id,commission,created_at,payment_date,status,id) values (?,?,?,?,?,?,?)]]
+2025-08-03T02:09:40.508+05:45  WARN 14004 --- [http-nio-8085-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]]
+2025-08-03T02:09:49.899+05:45  WARN 14004 --- [http-nio-8085-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]]
+2025-08-03T02:10:34.586+05:45  WARN 14004 --- [http-nio-8085-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]]
+2025-08-03T02:14:12.566+05:45  INFO 8616 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 8616 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T02:14:12.570+05:45  INFO 8616 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T02:14:20.548+05:45  WARN 8616 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T02:14:21.685+05:45  WARN 8616 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T02:14:29.034+05:45  WARN 8616 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T02:14:30.121+05:45  INFO 8616 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 18.921 seconds (process running for 19.749)
+2025-08-03T02:14:38.191+05:45  WARN 8616 --- [http-nio-8085-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]]
+2025-08-03T02:18:41.042+05:45  INFO 3968 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 3968 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T02:18:41.046+05:45  INFO 3968 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T02:18:45.871+05:45  WARN 3968 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T02:18:47.107+05:45  WARN 3968 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T02:18:51.869+05:45  WARN 3968 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T02:18:53.975+05:45  INFO 3968 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 14.016 seconds (process running for 15.071)
+2025-08-03T02:28:21.564+05:45  WARN 3968 --- [http-nio-8085-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: No enum constant com.wsn.model.entity.Booking.Status."CONFIRMED"]
+2025-08-03T02:30:55.438+05:45  INFO 5476 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 5476 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T02:30:55.443+05:45  INFO 5476 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T02:31:04.582+05:45  WARN 5476 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T02:31:05.607+05:45  WARN 5476 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T02:31:13.342+05:45  WARN 5476 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T02:31:14.286+05:45  INFO 5476 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 20.954 seconds (process running for 23.216)
+2025-08-03T02:35:16.235+05:45  WARN 5476 --- [http-nio-8085-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor]]
+2025-08-03T02:46:18.891+05:45  INFO 5188 --- [restartedMain] com.wsn.WsnApplication                   : Starting WsnApplication using Java 17.0.11 with PID 5188 (C:\Users\amrit\Documents\codes backup\wsn\target\classes started by amrit in C:\Users\amrit\Documents\codes backup\wsn)
+2025-08-03T02:46:18.898+05:45  INFO 5188 --- [restartedMain] com.wsn.WsnApplication                   : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T02:46:24.355+05:45  WARN 5188 --- [restartedMain] o.f.core.internal.command.DbMigrate      : outOfOrder mode is active. Migration of schema "public" may not be reproducible.
+2025-08-03T02:46:25.468+05:45  WARN 5188 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-03T02:46:31.003+05:45  WARN 5188 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-03T02:46:32.961+05:45  INFO 5188 --- [restartedMain] com.wsn.WsnApplication                   : Started WsnApplication in 15.351 seconds (process running for 16.284)

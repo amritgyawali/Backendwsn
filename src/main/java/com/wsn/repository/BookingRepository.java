@@ -19,4 +19,6 @@ public interface BookingRepository extends JpaRepository<Booking, UUID> {
     @Query("SELECT COUNT(b) FROM Booking b WHERE b.status = 'CONFIRMED' AND b.eventDate >= :date")
     long countActiveBookings(LocalDate date);
     List<Booking> findByCustomerId(UUID customerId);
+
+    List<Booking> findByVendorId(UUID vendorId);
 }

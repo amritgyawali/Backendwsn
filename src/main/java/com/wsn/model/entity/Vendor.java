@@ -1,5 +1,6 @@
 package com.wsn.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Vendor {
     @OneToOne
     @MapsId
     @JoinColumn(name = "id")
+    @JsonIgnore
     private User user;
 
     @Column(name = "business_name")
@@ -42,11 +44,15 @@ public class Vendor {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @Column(columnDefinition = "float8 default 15.00")
+    private double commission = 15.00;
+
     @Version
     private Long version;
 
-    public Vendor(UUID id, User user, String businessName, String serviceType, LocalDateTime createdAt, Long version) {
+    public Vendor(UUID id,double commission, User user, String businessName, String serviceType, LocalDateTime createdAt, Long version) {
         this.id = id;
+        this.commission = commission;
         this.user = user;
         this.businessName = businessName;
         this.serviceType = serviceType;
@@ -71,6 +77,14 @@ public class Vendor {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Double getCommission() {
+        return commission;
+    }
+
+    public void setCommission(Double commission) {
+        this.commission = commission;
     }
 
     public String getBusinessName() {
